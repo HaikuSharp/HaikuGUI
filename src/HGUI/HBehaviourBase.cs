@@ -1,10 +1,11 @@
-﻿using HGUI.Elements.Containers;
+﻿using HGUI.Elements.Base;
+using HGUI.Elements.Containers;
 using UnityEngine;
 namespace HGUI;
 public abstract class HBehaviourBase : MonoBehaviour {
+ private bool m_IsInitialized;
  private ElementCanvas m_Canvas;
  protected abstract void OnSetup(ElementCanvas canvas);
- private bool m_IsInitialized;
 #pragma warning disable IDE0051
  private void OnGUI() {
   this.IntializeIfNeeded();
@@ -18,7 +19,6 @@ public abstract class HBehaviourBase : MonoBehaviour {
   }
  }
  private void Intialize() {
-  var canvas = this.m_Canvas ??= new("root", new(0.0f, 0.0f, Screen.width, Screen.height), ElementContainer.EElementOrientation.None, GUIStyle.none);
-  this.OnSetup(canvas);
+  this.OnSetup(this.m_Canvas ??= new("root", new(0.0f, 0.0f, Screen.width, Screen.height), ElementContainerBase.EElementOrientation.None, GUIStyle.none));
  }
 }

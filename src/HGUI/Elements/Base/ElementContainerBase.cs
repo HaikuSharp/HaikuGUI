@@ -1,11 +1,10 @@
 ﻿using HGUI.Abstraction;
-using HGUI.Elements.Base;
 using HGUI.Exceptions;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-namespace HGUI.Elements.Containers;
-public class ElementContainer(string name, Rect rect, ElementContainer.EElementOrientation orintation, GUIStyle style) : StyledElementBase(name, rect, style), IElementContainer {
+namespace HGUI.Elements.Base;
+public abstract class ElementContainerBase(string name, Rect rect, ElementContainerBase.EElementOrientation orintation, GUIStyle style) : StyledElementBase(name, rect, style), IElementContainer {
  private readonly List<IElement> m_Elements = [];
  public IEnumerable<IElement> Elements {
   get {

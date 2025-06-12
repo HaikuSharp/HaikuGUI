@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using HGUI.Elements.Base;
+using UnityEngine;
 namespace HGUI.Elements.Containers;
-public class ElementCanvas(string name, Rect rect, ElementContainer.EElementOrientation orintation, GUIStyle style) : ElementContainer(name, rect, orintation, style) {
+public class ElementCanvas(string name, Rect rect, ElementContainerBase.EElementOrientation orintation, GUIStyle style) : ElementContainerBase(name, rect, orintation, style) {
  public Vector2 ResolutionReference { get; set; } = new(1920.0f, 1080.0f);
  public Vector2 ScaleFactor { get; set; } = Vector2.one;
  protected override void InternalOnGUI() {

@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using HGUI.Elements.Base;
+using UnityEngine;
 namespace HGUI.Elements.Containers;
-public class WindowElement(string name, Rect rect, int id, GUIContent header, ElementContainer.EElementOrientation orintation, GUIStyle style) : ElementContainer(name, rect, orintation, style) {
+public class WindowElement(string name, Rect rect, int id, GUIContent header, ElementContainerBase.EElementOrientation orintation, GUIStyle style) : ElementContainerBase(name, rect, orintation, style) {
  public GUIContent Header {
   get {
    return header;

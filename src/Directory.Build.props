@@ -1,0 +1,29 @@
+<Project>
+ <PropertyGroup>
+  <TargetFrameworks>net481;</TargetFrameworks>
+  <LangVersion>preview</LangVersion>
+  <BaseOutputPath>$(SolutionDir)bin\</BaseOutputPath>
+ </PropertyGroup>
+ <PropertyGroup>
+  <BuildVersion>1.0.0</BuildVersion>
+  <Version>$(BuildVersion)</Version>
+  <AssemblyVersion>$(BuildVersion)</AssemblyVersion>
+  <FileVersion>$(BuildVersion)</FileVersion>
+ </PropertyGroup>
+ <PropertyGroup>
+  <PackageId>$(MSBuildProjectName)</PackageId>
+  <Title>$(MSBuildProjectName)</Title>
+  <Description>TODO.</Description>
+  <Authors>R2R2HS</Authors>
+  <Company>A lightweight, reactive wrapper for Unity's IMGUI, making immediate-mode UI cleaner with data binding and streamlined controls.</Company>
+  <Copyright>© 2025 $(Company)</Copyright>
+  <RepositoryType>git</RepositoryType>
+  <PackageProjectUrl>https://github.com/HaikuSharp/HaikuGUI</PackageProjectUrl>
+  <RepositoryUrl>$(PackageProjectUrl).git</RepositoryUrl>
+  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+ </PropertyGroup>
+ <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+  <WarningLevel>9999</WarningLevel>
+  <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+ </PropertyGroup>
+</Project>

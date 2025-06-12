@@ -1,0 +1,6 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+ <ItemGroup>
+  <ProjectReference Include="..\HGUI.Abstraction\HGUI.Abstraction.csproj" />
+  <ProjectReference Include="..\HGUI.Exceptions\HGUI.Exceptions.csproj" />
+ </ItemGroup>
+</Project>

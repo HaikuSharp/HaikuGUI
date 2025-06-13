@@ -5,8 +5,8 @@ public class ReactiveProperty<T>(T defaultValue) : IReactiveProperty<T> {
  public T Value {
   get;
   set {
-   if(EqualityComparer<T>.Default.Equals(value, field)) {
-    value = field;
+   if(!EqualityComparer<T>.Default.Equals(value, field)) {
+    field = value;
     OnValueChanged?.Invoke(value);
    }
   }

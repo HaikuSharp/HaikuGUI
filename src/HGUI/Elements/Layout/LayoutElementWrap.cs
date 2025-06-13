@@ -9,7 +9,10 @@ public class LayoutElementWrap<TInner>(TInner inner, params GUILayoutOption[] op
   }
  }
  protected override void InternalOnGUI() {
-  inner.Rect = this.GetLayoutInnerRect(inner);
+  var layoutRect = this.GetLayoutInnerRect(inner);
+  if(Event.current.type is EventType.Repaint) {
+   inner.Rect = layoutRect;
+  }
   inner.OnGUI();
  }
  protected virtual Rect GetLayoutInnerRect(TInner inner) {
